@@ -6,8 +6,16 @@ public class WinZone : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void ShowAdv();
 
-    [SerializeField] private WinMenu _winMenu;
-    [SerializeField] private AddPoint _addPoint;
+    private WinMenu _winMenu;
+    private AddPoint _addPoint;
+    private Animations _animations;
+
+    private void Start()
+    {
+        _winMenu = FindObjectOfType<WinMenu>(true).GetComponent<WinMenu>();
+        _addPoint = FindObjectOfType<AddPoint>().GetComponent<AddPoint>();
+        _animations = FindObjectOfType<Animations>().GetComponent<Animations>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -21,6 +29,7 @@ public class WinZone : MonoBehaviour
     {
         _addPoint.PointAdd();
         _winMenu.gameObject.SetActive(true);
-        ShowAdv();
+        _animations.WinMenuAnimatoin();
+       // ShowAdv();
     }
 }

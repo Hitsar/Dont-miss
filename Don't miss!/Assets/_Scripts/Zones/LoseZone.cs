@@ -6,8 +6,16 @@ public class LoseZone : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void ShowAdv();
 
-    [SerializeField] private LoseMenu _loseMenu;
-    [SerializeField] private AddPoint _addPoint;
+    private LoseMenu _loseMenu;
+    private AddPoint _addPoint;
+    private Animations _animations;
+
+    private void Start()
+    {
+        _loseMenu = FindObjectOfType<LoseMenu>(true).GetComponent<LoseMenu>();
+        _addPoint = FindObjectOfType<AddPoint>().GetComponent<AddPoint>();
+        _animations = FindObjectOfType<Animations>().GetComponent<Animations>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -21,6 +29,7 @@ public class LoseZone : MonoBehaviour
     {
         _addPoint.SaveProgress();
         _loseMenu.gameObject.SetActive(true);
-        ShowAdv();
+        _animations.LozeMenuAnimatoin();
+        //ShowAdv();
     }
 }
