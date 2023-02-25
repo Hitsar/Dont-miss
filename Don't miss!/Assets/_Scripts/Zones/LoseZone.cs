@@ -30,6 +30,6 @@ public class LoseZone : MonoBehaviour
         _addPoint.SaveProgress();
         _loseMenu.gameObject.SetActive(true);
         _animations.LozeMenuAnimatoin();
-        //ShowAdv();
+        ShowAdv();
     }
 }

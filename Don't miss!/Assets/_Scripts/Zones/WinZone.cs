@@ -30,6 +30,6 @@ public class WinZone : MonoBehaviour
         _addPoint.PointAdd();
         _winMenu.gameObject.SetActive(true);
         _animations.WinMenuAnimatoin();
-       // ShowAdv();
+        ShowAdv();
     }
 }

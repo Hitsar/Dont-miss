@@ -13,7 +13,7 @@ public class Menu : MonoBehaviour
     private void Start()
     {
         _text.text = Progress.Instance.PlayerInfo._point.ToString();
-       // ShowAdv();
+        ShowAdv();
     }
     public void StartGame()
     {

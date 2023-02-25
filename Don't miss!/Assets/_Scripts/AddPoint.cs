@@ -24,7 +24,7 @@ public class AddPoint : MonoBehaviour
         if (Progress.Instance.PlayerInfo._point < _point)
         {
             Progress.Instance.PlayerInfo._point = _point;
-          //  SetToLeaderboard(_point);
+            SetToLeaderboard(_point);
         }
     }
 }
